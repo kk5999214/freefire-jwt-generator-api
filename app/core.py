@@ -117,7 +117,6 @@ async def create_jwt(uid: str, password: str) -> Dict[str, str]:
 
         if token == "0" or len(token) == 0:
             # Added more context to the error
-            import json_format
             res_dict = json.loads(json_format.MessageToJson(res_msg))
             raise RuntimeError(f"Failed to obtain JWT. Response details: {res_dict}")
 
